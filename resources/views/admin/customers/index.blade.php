@@ -52,7 +52,7 @@
             <td>{{ $c->email}}</td>        
             
 
-            <td>{{ date('d-m-Y', strtotime($c->updated_at)) }}</td>
+            <td>{{ date('d-m-Y', strtotime($c->created_at)) }}</td>
             
             
             <td>             

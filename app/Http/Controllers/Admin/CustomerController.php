@@ -46,10 +46,24 @@ class CustomerController extends Controller
     {
           
         $customer->name= $request->name;   
+        $customer->address= $request->address;   
         $customer->telephone= $request->telephone;  
         $customer->mobile= $request->mobile;  
         $customer->email= $request->email;  
         $customer->contact= $request->contact;  
+
+        $customer->proc_contact= $request->proc_contact; 
+        $customer->proc_telephone= $request->proc_telephone; 
+        $customer->proc_email= $request->proc_email; 
+
+        $customer->it_contact= $request->it_contact; 
+        $customer->it_telephone= $request->it_telephone; 
+        $customer->it_email= $request->it_email; 
+
+        $customer->feedback= $request->feedback; 
+        $customer->customer_response= $request->customer_response; 
+        $customer->followup1= $request->followup1; 
+
         $customer->save();             
         return redirect('admin/customers')->with('success','Transaction created successfully!');
     }

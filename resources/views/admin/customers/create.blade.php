@@ -84,7 +84,7 @@
      <div class = "row no-gutters">
      <label class = "col-lg-1" for="">Address</label>
      <div class = "col-lg-7">
-     <input class="form-control" data-error="Please enter customer address." type="text" name = "address" class = "form-control" placeholder="Enter customer address" required>    
+     <input class="form-control" data-error="Please enter customer address." type="text" name = "address" class = "form-control" placeholder="Enter customer address" >    
      <div class = "clear-fix"></div>
     </div>     
      </div>
@@ -92,9 +92,9 @@
 
      <div class="form-group">
      <div class = "row">
-     <label class = "col-lg-1" for="">Telephone*</label>
+     <label class = "col-lg-1" for="">Telephone</label>
      <div class = "col-lg-3">
-     <input class = "form-control datepicker" id="datepicker" name = "telephone" placeholder="Enter telephone number" required>  
+     <input class = "form-control datepicker" id="datepicker" name = "telephone" placeholder="Enter telephone number" >  
          
     
     
@@ -103,7 +103,7 @@
 
      <label class = "col-lg-1" for="">Mobile</label>
      <div class = "col-lg-3">
-     <input type="text" name = "mobile" class = "form-control" placeholder="Enter mobile number" required>
+     <input type="text" name = "mobile" class = "form-control" placeholder="Enter mobile number" >
      <div class = "clear-fix"></div>
     </div>
 </div>
@@ -112,7 +112,7 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Email</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "email" class = "form-control"  placeholder="Enter email address" required> </div>     
+     <input type="text" name = "email" class = "form-control"  placeholder="Enter email address"> </div>     
      <label class = "col-lg-1" for="">Contact</label>
       <div class = "col-lg-3">
      <input type="text" name = "contact" class = "form-control" placeholder="Enter contact person name">
@@ -129,11 +129,11 @@
      <div class = "row">     
      <label class = "col-lg-1" for="">Contact Name</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "proc_contact" class = "form-control"  placeholder="Enter procurement contact name" required> </div>    
+     <input type="text" name = "proc_contact" class = "form-control"  placeholder="Enter procurement contact name"> </div>    
 
      <label class = "col-lg-1" for="">Contact Number</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "proc_telephone" class = "form-control"  placeholder="Enter procurement contact number" required> </div>  
+     <input type="text" name = "proc_telephone" class = "form-control"  placeholder="Enter procurement contact number"> </div>  
 
      <label class = "col-lg-1" for="">Email address</label>
       <div class = "col-lg-3">
@@ -150,15 +150,38 @@
      <div class = "row">     
      <label class = "col-lg-1" for="">Contact Name</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "proc_contact" class = "form-control"  placeholder="Enter IT contact name" required> </div>    
+     <input type="text" name = "it_contact" class = "form-control"  placeholder="Enter IT contact name" > </div>    
 
      <label class = "col-lg-1" for="">Contact Number</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "proc_telephone" class = "form-control"  placeholder="Enter IT contact number" required> </div>  
+     <input type="text" name = "it_telephone" class = "form-control"  placeholder="Enter IT contact number" > </div>  
 
      <label class = "col-lg-1" for="">Email address</label>
       <div class = "col-lg-3">
-     <input type="text" name = "proc_email" class = "form-control" placeholder="Enter IT email address">
+     <input type="text" name = "it_email" class = "form-control" placeholder="Enter IT email address">
+     <div class = "clear-fix"></div>
+    </div>
+    </div>
+
+    <div class="form-group">
+    <div class="bg-secondary text-white row mt-2">Status</div>
+    <DIV>`</DIV>
+     <div class = "row">     
+     <label class = "col-lg-1" for="">Feedback</label>     
+     <div class = "col-lg-3">     
+     <textarea name = "feedback" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" required></textarea> 
+      </div>   
+
+     
+
+     <label class = "col-lg-1" for="">Customer Response</label>     
+     <div class = "col-lg-3">     
+     <textarea name = "customer_response" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" required></textarea> 
+     </div>  
+
+     <label class = "col-lg-1" for="">Followup</label>
+      <div class = "col-lg-3">
+      <textarea name = "followup1" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" required></textarea> 
      <div class = "clear-fix"></div>
     </div>
     </div>
