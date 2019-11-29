@@ -85,9 +85,10 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Customer $customer)
     {
-        //
+        $arr['customer'] = $customer;        
+        return view('admin.customers.edit')->with($arr);
     }
 
     /**
@@ -97,9 +98,29 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Customer $customer)
     {
-        //
+        $customer->name= $request->name;   
+        $customer->address= $request->address;   
+        $customer->telephone= $request->telephone;  
+        $customer->mobile= $request->mobile;  
+        $customer->email= $request->email;  
+        $customer->contact= $request->contact;  
+
+        $customer->proc_contact= $request->proc_contact; 
+        $customer->proc_telephone= $request->proc_telephone; 
+        $customer->proc_email= $request->proc_email; 
+
+        $customer->it_contact= $request->it_contact; 
+        $customer->it_telephone= $request->it_telephone; 
+        $customer->it_email= $request->it_email; 
+
+        $customer->feedback= $request->feedback; 
+        $customer->customer_response= $request->customer_response; 
+        $customer->followup1= $request->followup1; 
+
+        $customer->save();
+        return redirect()->route('admin.customers.index');
     }
 
     /**
@@ -111,6 +132,6 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         Customer::destroy($id);
-        return redirect()->route('admin.customers.index')->with('success','Transaction deleted successfully!');
+        return redirect()->route('admin.customers.index')->with('error','Transaction deleted successfully!');
     }
 }

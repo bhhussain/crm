@@ -59,8 +59,14 @@
                       
 
             
-            <a href="{{ route('admin.customers.edit',$c->id) }}" class="btn btn-info btn-sm">Edit</a>
-            <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()" class="btn btn-danger btn-sm">Delete</a>
+            <a href="{{ route('admin.customers.edit',$c->id) }}">
+            <i class="fa fa-edit"></i>
+            </a>
+            /
+
+            <a href="javascript:void(0)" onclick = "$(this).parent().find('form').submit()">
+            <i class="fa fa-trash text-red"></i
+            ></a>
             <form action = "{{ route('admin.customers.destroy', $c->id)}}" method = "POST">
             @method('DELETE')
             <input type="hidden" name="_token" value = "{{ csrf_token() }}">
