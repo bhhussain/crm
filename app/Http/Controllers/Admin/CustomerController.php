@@ -20,7 +20,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $arr['customers'] = Customer::paginate(10);
+        $arr['customers'] = Customer::paginate(12);
         return view('admin.customers.index')->with($arr);   
 
     

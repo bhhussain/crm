@@ -32,7 +32,7 @@
                    
           <th> ID </th>                      
             <th> Name </th>
-            <th> Tel </th>
+            <th> Telephone </th>
             <th> Mobile </th>
             <th> Email </th>         
             <th> Date </th>  

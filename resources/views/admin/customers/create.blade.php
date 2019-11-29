@@ -169,19 +169,19 @@
      <div class = "row">     
      <label class = "col-lg-1" for="">Feedback</label>     
      <div class = "col-lg-3">     
-     <textarea name = "feedback" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" required></textarea> 
+     <textarea name = "feedback" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" ></textarea> 
       </div>   
 
      
 
      <label class = "col-lg-1" for="">Customer Response</label>     
      <div class = "col-lg-3">     
-     <textarea name = "customer_response" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" required></textarea> 
+     <textarea name = "customer_response" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" ></textarea> 
      </div>  
 
      <label class = "col-lg-1" for="">Followup</label>
       <div class = "col-lg-3">
-      <textarea name = "followup1" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" required></textarea> 
+      <textarea name = "followup1" class="form-control" rows="4" id="comment" placeholder="Enter the purpose of the purchase" ></textarea> 
      <div class = "clear-fix"></div>
     </div>
     </div>
