@@ -70,6 +70,8 @@
             <form action = "{{ route('admin.customers.destroy', $c->id)}}" method = "POST">
             @method('DELETE')
             <input type="hidden" name="_token" value = "{{ csrf_token() }}">
+
+            
             </form>
           </td>                
             

@@ -112,7 +112,7 @@
      <div class = "row">
      <label class = "col-lg-1" for="">Email</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "email" class = "form-control"  placeholder="Enter email address"> </div>     
+     <input type="email" name = "email" class = "form-control"  placeholder="Enter email address"> </div>     
      <label class = "col-lg-1" for="">Contact</label>
       <div class = "col-lg-3">
      <input type="text" name = "contact" class = "form-control" placeholder="Enter contact person name">
@@ -137,7 +137,7 @@
 
      <label class = "col-lg-1" for="">Email address</label>
       <div class = "col-lg-3">
-     <input type="text" name = "proc_email" class = "form-control" placeholder="Enter procurement email address">
+     <input type="email" name = "proc_email" class = "form-control" placeholder="Enter procurement email address">
      <div class = "clear-fix"></div>
     </div>
     </div>
@@ -158,7 +158,7 @@
 
      <label class = "col-lg-1" for="">Email address</label>
       <div class = "col-lg-3">
-     <input type="text" name = "it_email" class = "form-control" placeholder="Enter IT email address">
+     <input type="email" name = "it_email" class = "form-control" placeholder="Enter IT email address">
      <div class = "clear-fix"></div>
     </div>
     </div>
