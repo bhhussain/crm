@@ -120,7 +120,7 @@ class CustomerController extends Controller
         $customer->followup1= $request->followup1; 
 
         $customer->save();
-        return redirect()->route('admin.customers.index');
+        return redirect()->route('admin.customers.index')->with('info','Transaction updated successfully!');;
     }
 
     /**
