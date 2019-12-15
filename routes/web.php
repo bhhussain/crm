@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('users', 'UserController@index');
+//Route::get('users', 'UserController@index');
 Route::get('changeStatus', 'UserController@changeStatus');
 
 Route::get('/admin', 'HomeController@index')->name('home');
@@ -43,6 +43,9 @@ Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')-
 //Route::get('/admin/accounts/{account}/print', 'Admin\AccountsController@print')->name('admin.accounts.print');
 
 Route::resource('/admin/customers', 'Admin\CustomerController', ['as'=>'admin']);
+
+Route::get('/admin/customers/users', 'Admin\UsersController@index');
+Route::get('/admin/customers/users-list', 'Admin\UsersController@usersList'); 
 
 
 

@@ -54,7 +54,11 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Add Customer</li>
+              <li class="breadcrumb-item"><a href="{{route('admin.customers.index')}}">Customer</a></li>
+
+              
+             
+              
               
 
             </ol>
@@ -66,7 +70,7 @@
 
     <section class="content">
       <div class="container-fluid">
-     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.customers.store') }}" enctype="multipart/form-data">
+     <form class="needs-validation" novalidate method = "post" action="{{ route('admin.customers.store') }}" enctype="multipart/form-data" autocomplete="off">
      <input type="hidden" name="_token" value = "{{ csrf_token() }}">
      <div class="bg-secondary text-white row mt-2">Basic Info</div>
      <DIV>`</DIV>
@@ -150,7 +154,7 @@
      <div class = "row">     
      <label class = "col-lg-1" for="">Contact Name</label>     
      <div class = "col-lg-3">     
-     <input type="text" name = "it_contact" class = "form-control"  placeholder="Enter IT contact name" > </div>    
+     <input type="text" name = "it_contact" class = "form-control"  placeholder="Enter IT contact name" autocomplete="false" > </div>    
 
      <label class = "col-lg-1" for="">Contact Number</label>     
      <div class = "col-lg-3">     

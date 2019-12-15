@@ -7,48 +7,56 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <!--  <h1 class="m-0 text-dark">Customer List</h1> -->
+            <h1 class="m-0 text-dark">Customer List</h1>
             
           </div><!-- /.col -->
-         
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{route('home')}}">Dashboard</a></li>
+              <li class="breadcrumb-item active">Customers</li>
+            </ol>
+          </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
     <section class="content">
-      <div class="container-fluid" >
-      
-     
-
-      <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Pending Customer List           
-              <a href="{{ route('admin.customers.create') }}" class="btn btn-primary btn-sm">Add New</a></h3>   
-          </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-            
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                <th> ID </th>                      
+      <div class="container-fluid">
+      <p>
+      <a href="{{ route('admin.customers.create') }}" class="btn btn-primary btn-sm">Add New</a>
+      </p>
+    
+        <table class = "table table-bordered table-striped">
+          <tr>
+                   
+          <th> ID </th>                      
             <th> Name </th>
             <th> Telephone </th>
             <th> Mobile </th>
             <th> Email </th>         
             <th> Date </th>  
-            <th> Action </th>  
-                </tr>
-                </thead>
-                <tbody>
+            
+            
+            <th> Action </th>
+            </tr>
+            @if(count($customers))
 
-                @if(count($customers))
+          
+            
             
             @foreach($customers as $c)
+
+   
+            
+
+           
             
             <tr>
-            <td>{{ $c->id }}</td>     
+
+          
+            <td>{{ $c->id }}</td> 
+                
             <td>{{ $c->name }}</td>            
             <td>{{ $c->telephone }}</td>
             <td>{{ $c->mobile }}</td>
@@ -80,28 +88,13 @@
             
             </tr>
             @endforeach
+            
+            @else
+            <tr><td colspan="11">No Record Found</td></tr>
             @endif
             
-               
-                </tbody>
-                <tfoot>
-                <tr>
-                <th> ID </th>                      
-            <th> Name </th>
-            <th> Telephone </th>
-            <th> Mobile </th>
-            <th> Email </th>         
-            <th> Date </th>  
-            <th> Action </th>  
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-
- 
-        
+        </table>
+        {{ $customers->render() }}
       </div>
     </section>
 @endsection

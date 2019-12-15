@@ -441,7 +441,7 @@
 		 *  @param {int|null} [iColumn] Column to limit filtering to
 		 *  @param {bool} [bRegex=false] Treat as regular expression or not
 		 *  @param {bool} [bSmart=true] Perform smart filtering or not
-		 *  @param {bool} [bShowGlobal=true] Show the input global filter in it's input box(es)
+		 *  @param {bool} [bshowGlobal=true] show the input global filter in it's input box(es)
 		 *  @param {bool} [bCaseInsensitive=true] Do case-insensitive matching (true) or not (false)
 		 *  @dtopt API
 		 *  @deprecated Since v1.10
@@ -454,7 +454,7 @@
 		 *      oTable.fnFilter( 'test string' );
 		 *    } );
 		 */
-		this.fnFilter = function( sInput, iColumn, bRegex, bSmart, bShowGlobal, bCaseInsensitive )
+		this.fnFilter = function( sInput, iColumn, bRegex, bSmart, bshowGlobal, bCaseInsensitive )
 		{
 			var api = this.api( true );
 		
@@ -624,7 +624,7 @@
 		 */
 		this.fnIsOpen = function( nTr )
 		{
-			return this.api( true ).row( nTr ).child.isShown();
+			return this.api( true ).row( nTr ).child.isshown();
 		};
 		
 		
@@ -695,9 +695,9 @@
 		
 		
 		/**
-		 * Show a particular column
+		 * show a particular column
 		 *  @param {int} iCol The column whose display should be changed
-		 *  @param {bool} bShow Show (true) or hide (false) the column
+		 *  @param {bool} bshow show (true) or hide (false) the column
 		 *  @param {bool} [bRedraw=true] Redraw the table or not
 		 *  @dtopt API
 		 *  @deprecated Since v1.10
@@ -710,9 +710,9 @@
 		 *      oTable.fnSetColumnVis( 1, false );
 		 *    } );
 		 */
-		this.fnSetColumnVis = function ( iCol, bShow, bRedraw )
+		this.fnSetColumnVis = function ( iCol, bshow, bRedraw )
 		{
-			var api = this.api( true ).column( iCol ).visible( bShow );
+			var api = this.api( true ).column( iCol ).visible( bshow );
 		
 			if ( bRedraw === undefined || bRedraw ) {
 				api.columns.adjust().draw();
@@ -732,7 +732,7 @@
 		 *      var oTable = $('#example').dataTable();
 		 *      var oSettings = oTable.fnSettings();
 		 *
-		 *      // Show an example parameter from the settings
+		 *      // show an example parameter from the settings
 		 *      alert( oSettings._iDisplayStart );
 		 *    } );
 		 */
@@ -4623,7 +4623,7 @@
 	 */
 	function _fnUpdateInfo ( settings )
 	{
-		/* Show information about the table */
+		/* show information about the table */
 		var nodes = settings.aanFeatures.i;
 		if ( nodes.length === 0 ) {
 			return;
@@ -4699,7 +4699,7 @@
 			return;
 		}
 	
-		/* Show the display HTML options */
+		/* show the display HTML options */
 		_fnAddOptionsHtml( settings );
 	
 		/* Build and draw the header / footer for the table */
@@ -5017,7 +5017,7 @@
 	/**
 	 * Display or hide the processing indicator
 	 *  @param {object} settings dataTables settings object
-	 *  @param {bool} show Show the processing indicator (true) or not (false)
+	 *  @param {bool} show show the processing indicator (true) or not (false)
 	 *  @memberof DataTable#oApi
 	 */
 	function _fnProcessingDisplay ( settings, show )
@@ -8229,7 +8229,7 @@
 		row._details = $(rows);
 	
 		// If the children were already shown, that state should be retained
-		if ( row._detailsShow ) {
+		if ( row._detailsshow ) {
 			row._details.insertAfter( row.nTr );
 		}
 	};
@@ -8245,7 +8245,7 @@
 			if ( row && row._details ) {
 				row._details.remove();
 	
-				row._detailsShow = undefined;
+				row._detailsshow = undefined;
 				row._details = undefined;
 			}
 		}
@@ -8259,7 +8259,7 @@
 			var row = ctx[0].aoData[ api[0] ];
 	
 			if ( row._details ) {
-				row._detailsShow = show;
+				row._detailsshow = show;
 	
 				if ( show ) {
 					row._details.insertAfter( row.nTr );
@@ -8296,7 +8296,7 @@
 					// Internal data grab
 					var row = data[ idx ];
 	
-					if ( row._detailsShow ) {
+					if ( row._detailsshow ) {
 						row._details.insertAfter( row.nTr );
 					}
 				} );
@@ -8398,12 +8398,12 @@
 	} );
 	
 	
-	_api_register( _child_obj+'.isShown()', function () {
+	_api_register( _child_obj+'.isshown()', function () {
 		var ctx = this.context;
 	
 		if ( ctx.length && this.length ) {
-			// _detailsShown as false or undefined will fall through to return false
-			return ctx[0].aoData[ this[0] ]._detailsShow || false;
+			// _detailsshown as false or undefined will fall through to return false
+			return ctx[0].aoData[ this[0] ]._detailsshow || false;
 		}
 		return false;
 	} );
@@ -10719,7 +10719,7 @@
 	
 		/**
 		 * When rendering large numbers in the information element for the table
-		 * (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers
+		 * (i.e. "showing 1 to 10 of 57 entries") DataTables will render large numbers
 		 * to have a comma separator for the 'thousands' units (e.g. 1 million is
 		 * rendered as "1,000,000") to help readability for the end user. This
 		 * function will override the default method DataTables uses.
@@ -11034,7 +11034,7 @@
 		 *  @name DataTable.defaults.stateLoaded
 		 *
 		 *  @example
-		 *    // Show an alert with the filtering value that was saved
+		 *    // show an alert with the filtering value that was saved
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
 		 *        "stateSave": true,
@@ -11452,7 +11452,7 @@
 			 * * `\_PAGES\_` - Total number of pages of data in the table
 			 *
 			 *  @type string
-			 *  @default Showing _START_ to _END_ of _TOTAL_ entries
+			 *  @default showing _START_ to _END_ of _TOTAL_ entries
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.info
@@ -11461,19 +11461,19 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "info": "Showing page _PAGE_ of _PAGES_"
+			 *          "info": "showing page _PAGE_ of _PAGES_"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "showing _START_ to _END_ of _TOTAL_ entries",
 	
 	
 			/**
 			 * Display information string for when the table is empty. Typically the
 			 * format of this string should match `info`.
 			 *  @type string
-			 *  @default Showing 0 to 0 of 0 entries
+			 *  @default showing 0 to 0 of 0 entries
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.infoEmpty
@@ -11487,7 +11487,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "showing 0 to 0 of 0 entries",
 	
 	
 			/**
@@ -11595,7 +11595,7 @@
 			 * with a default select list of 10, 25, 50 and 100, and can be replaced
 			 * with a custom select box if required.
 			 *  @type string
-			 *  @default Show _MENU_ entries
+			 *  @default show _MENU_ entries
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.lengthMenu
@@ -11627,7 +11627,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "show _MENU_ entries",
 	
 	
 			/**
@@ -12984,7 +12984,7 @@
 			"bFilter": null,
 	
 			/**
-			 * Table information element (the 'Showing x of y records' div) enable
+			 * Table information element (the 'showing x of y records' div) enable
 			 * flag.
 			 * Note that this parameter will be set by the initialisation routine. To
 			 * set a default use {@link DataTable.defaults}.
@@ -14087,9 +14087,9 @@
 		 *
 		 * * `first` - Jump to first page when activated
 		 * * `last` - Jump to last page when activated
-		 * * `previous` - Show previous page when activated
-		 * * `next` - Show next page when activated
-		 * * `{int}` - Show page of the index given
+		 * * `previous` - show previous page when activated
+		 * * `next` - show next page when activated
+		 * * `{int}` - show page of the index given
 		 * * `{array}` - A nested array containing the above elements to add a
 		 *   containing 'DIV' element (might be useful for styling).
 		 *
@@ -14103,7 +14103,7 @@
 		 *  @default {}
 		 *
 		 *  @example
-		 *    // Show previous, next and current page buttons only
+		 *    // show previous, next and current page buttons only
 		 *    $.fn.dataTableExt.oPagination.current = function ( page, pages ) {
 		 *      return [ 'previous', page, 'next' ];
 		 *    };
@@ -15220,7 +15220,7 @@
 	 *  @event
 	 *  @param {event} e jQuery event object
 	 *  @param {object} oSettings DataTables settings object
-	 *  @param {boolean} bShow Flag for if DataTables is doing processing or not
+	 *  @param {boolean} bshow Flag for if DataTables is doing processing or not
 	 */
 
 	/**

@@ -20,7 +20,12 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $arr['customers'] = Customer::paginate(12);
+         /**
+       * $arr['customers'] = Customer::orderBy('id','desc')->paginate(200);
+       * $arr['customers'] = Customer::all()->orderBy('id','desc');
+*/
+
+ $arr['customers'] = Customer::all();
         return view('admin.customers.index')->with($arr);   
 
     
@@ -32,7 +37,9 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
+        
         return view('admin.customers.create');
     }
 
